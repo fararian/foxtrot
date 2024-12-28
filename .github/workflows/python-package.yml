@@ -42,3 +42,8 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        
+    - name: Build Docker image
+      run: |
+        docker build -t fararian/test .
+        docker push fararian/test
